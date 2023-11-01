@@ -20,7 +20,7 @@ TEST_CASE("Smallest - PageRank test for 5 elements", "[weight=5]")
   for (float x : out) {
     sum += x;
   }
-  REQUIRE(sum < 100.1); 
+  REQUIRE(sum < 100.1); //total of page ranks should be between 100.1 and 99.9 
   REQUIRE(sum > 99.9);
 }
 
@@ -40,7 +40,7 @@ TEST_CASE("Second Smallest - PageRank test for 25 elements", "[weight=5]")
   for (float x : out) {
     sum += x;
   }
-  REQUIRE(sum < 100.1); 
+  REQUIRE(sum < 100.1); //total of page ranks should be between 100.1 and 99.9 
   REQUIRE(sum > 99.9);
 }
 
@@ -59,6 +59,6 @@ TEST_CASE("Medium - PageRank test for 50 elements", "[weight=5]")
   for (float x : out) {
     sum += x;
   }
-  REQUIRE(sum < 100.1); 
+  REQUIRE(sum < 100.1); //total of page ranks should be between 100.1 and 99.9 
   REQUIRE(sum > 99.9);
 }
