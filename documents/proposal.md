@@ -17,14 +17,14 @@ The Pagerank algorithm is designed to evaluate the importance of a webpage in ac
 
 The Pagerank algorithm we wish to implement uses an adjacency matrix stored as a 2D vector. So therefore, a helper function is to be implemented for converting a CSV file to a vector of booleans representing a link between pages (true meaning a link is present).
 
-1. `std::vector<std::vector<bool>> csvToAdjacency(std::string infile)
+1. `std::vector<std::vector<bool>> csvToAdjacency(std::string infile)`
 ```
 @param infile -- the path to the processed CSV as an adjacency matrix
 @return the vector representing the adjacency matrix in the CSV as a 2D vector of booleans
 ```
 This basic function is to take in the CSV file path. A 2D vector is initialized, and character by character the CSV file is read to the the vector. The first row of headers is ignored, but following that each row is pushed back to the 2D vector one by one. If a zero is met, then the value false is pushed back to the row vector, and if a one is met then true is pushed back. The resulting adjacency matrix is then returned.
 
-2. `std::vector<float> pageRankAlgorithm(std::vector<std::vector<bool>> adjacencyMatrix, int numOfIterations, double damping)
+2. `std::vector<float> pageRankAlgorithm(std::vector<std::vector<bool>> adjacencyMatrix, int numOfIterations, double damping)`
 ```
 @param adjacencyMatrix -- the vector representing the adjacency matrix of the network
 @param numOfIterations -- the number of times our random surfer should move/jump. The number of iteration should be greater than 0, yet values greater than 20 work best
@@ -33,7 +33,7 @@ This basic function is to take in the CSV file path. A 2D vector is initialized,
 ```
 This is the main function of this project. This function takes in the adjacency matrix and proceeds to declare a vector of ints counting the number of times each page is visited in this algorithm. The "surfer" will then begin at a random page. A random float value will determine if the surfer is to jump or follow a link. If the the random float value between 0 and 1 is below the damping factor then the surfer will continue to follow links. Otherwise, it will jump to a random page. Each time the surfer visits a page, that page's visit count is incremented. After completing the number of iterations, the vector is normalized according to the number of iterations performed and stored in a vector of floats, which is then returned.
 
-3. `std::vector<float> getTopThreeAndLowest(std::vector<float> rankings)
+3. `std::vector<float> getTopThreeAndLowest(std::vector<float> rankings)`
 ```
 @param rankings -- the vector representing the ranks of each page in the network
 @return a vector where indices [0:2] are the largest, second largest, and third largest ranks respectively, and index [3] represents the smallest rank
