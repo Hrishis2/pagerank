@@ -49,7 +49,7 @@ n = 250
 array = np.random.randint(low=0, high=2, size=(n, n))
 for i in range(len(array)):
   f.write("Site " + str(i) + ",")
-for row in m
+for row in m:
   f.write("\n");
   for col in row:
     f.write(col + ",")
