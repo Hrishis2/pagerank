@@ -27,7 +27,8 @@ This basic function is to take in the CSV file path. A 2D vector is initialized,
 2. `std::vector<float> pageRankAlgorithm(std::vector<std::vector<bool>> adjacencyMatrix, int numOfIterations, double damping)`
 ```
 @param adjacencyMatrix -- the vector representing the adjacency matrix of the network
-@param numOfIterations -- the number of times our random surfer should move/jump. The number of iteration should be greater than 0, yet values greater than 20 work best
+@param numOfIterations -- the number of times our random surfer should move/jump.
+The number of iteration should be greater than 0, yet values greater than 20 work best
 @param damping -- the probability that the surfer will follow a link, as opposed to jumping to a random page. This value should be between [0, 1] inclusive
 @return a vector representing the normalized rank of each page in the network
 ```
@@ -36,7 +37,8 @@ This is the main function of this project. This function takes in the adjacency 
 3. `std::vector<float> getTopThreeAndLowest(std::vector<float> rankings)`
 ```
 @param rankings -- the vector representing the ranks of each page in the network
-@return a vector where indices [0:2] are the largest, second largest, and third largest ranks respectively, and index [3] represents the smallest rank
+@return a vector where indices [0:2] are the largest, second largest,
+and third largest ranks respectively, and index [3] represents the smallest rank
 ```
 To confirm that the PageRank algorithm works, we decided to create a helper function used by the test cases that takes the vector of ranks for each page and returns a vector of the top three largest ranks, and the lowest rank. Instead of having two different functions for each leading to worse runtime complexity, this function just provides a vector of four floats, where the first three are the highest ranks, and the final element is the lowest rank. This is done iteratively by traversing through each rank and keeping track of the largest, second largest, third largest, and lowest rank.
 
