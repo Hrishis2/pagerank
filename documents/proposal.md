@@ -39,3 +39,20 @@ This is the main function of this project. This function takes in the adjacency 
 @return a vector where indices [0:2] are the largest, second largest, and third largest ranks respectively, and index [3] represents the smallest rank
 ```
 To confirm that the PageRank algorithm works, we decided to create a helper function used by the test cases that takes the vector of ranks for each page and returns a vector of the top three largest ranks, and the lowest rank. Instead of having two different functions for each leading to worse runtime complexity, this function just provides a vector of four floats, where the first three are the highest ranks, and the final element is the lowest rank. This is done iteratively by traversing through each rank and keeping track of the largest, second largest, third largest, and lowest rank.
+
+## Data Description
+Our test datasets are adjacency matrices with different amounts of pages or sites as listed in our CSV files. The corresponding test datasets contain 5, 25, 50, 100, and 250 sites. For the smallest dataset, we decided to provide the order of the five webpages in terms of rank to fully finalize that this algorithm works. This ensures that when testing our algorithm we can check the ranks outputted with the ones calculated. For the rest of the datasets, we decide to provide the top three most important sites and the least important site. As on the internet sites don't often have links to themselves, we decided to remove values of one along the right diagonal manually for the adjacency matrix CSVs, as such values would mean links to self. The code to create adjacency matrices in CSV files of any length is written below. Note that python was used due to the robust numpy library that allows for such matrix generation:
+```
+import numpy as np
+f = open("path.csv", "a")
+n = 250
+array = np.random.randint(low=0, high=2, size=(n, n))
+for i in range(len(array)):
+  f.write("Site " + str(i) + ",")
+for row in m
+  f.write("\n");
+  for col in row:
+    f.write(col + ",")
+print(array)
+f.close()
+```
