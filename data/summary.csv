@@ -1,6 +1,6 @@
 filename, number of points, most important
-smallest.csv,5,
-second_smallest.csv,25, 
-medium.csv,50, 
-second_largest.csv,100, 
-largest.csv,250,
+smallest.csv,5,2
+second_smallest.csv,25,18
+medium.csv,50,50
+second_largest.csv,100,85
+largest.csv,250,2
