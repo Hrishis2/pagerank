@@ -1,10 +1,10 @@
 #include <catch2/catch_test_macros.hpp>
-#include "pagerank.h"
+#include "../src/pagerank.h"
 
 TEST_CASE("Smallest - PageRank test for 5 elements", "[weight=5]")
 {
   std::vector<int> expected = {2,1,4,0,3}; //expected order of smallest dataset
-  std::vector<std::vector<bool>> adjacency_matrix = csvToAdjacency("../../data/smallest.csv");
+  std::vector<std::vector<int>> adjacency_matrix = csvToAdjacency("../../data/smallest.csv");
   std::vector<float> out = pageRankAlgorithm(adjacency_matrix, 100, 0.85); //passing in adjacency matrix, 100 iterations, and damping factor of 0.85 
   REQUIRE(out.at(0) < 14.5);
   REQUIRE(out.at(0) > 13.5);
@@ -28,7 +28,7 @@ TEST_CASE("Second Smallest - PageRank test for 25 elements", "[weight=5]")
 {
   std::vector<int> top3 = {18, 5, 4}; //exepected top 3 ranked pages of second smallest dataset
   int lowest = 7; //lowest ranked page of second smallest dataset
-  std::vector<std::vector<bool>> adjacency_matrix = csvToAdjacency("../../data/second_smallest.csv");
+  std::vector<std::vector<int>> adjacency_matrix = csvToAdjacency("../../data/second_smallest.csv");
   std::vector<float> out = pageRankAlgorithm(adjacency_matrix, 100, 0.85); //passing in adjacency matrix, 100 iterations, and damping factor of 0.85 
   std::vector<float> three_largest_one_smallest = getTopThreeAndLowest(out);
    
@@ -48,7 +48,7 @@ TEST_CASE("Medium - PageRank test for 50 elements", "[weight=5]")
 {
   std::vector<int> top3 = {50, 19, 24};
   int lowest = 3;
-  std::vector<std::vector<bool>> adjacency_matrix = csvToAdjacency("../../data/second_smallest.csv");
+  std::vector<std::vector<int>> adjacency_matrix = csvToAdjacency("../../data/second_smallest.csv");
   std::vector<float> out = pageRankAlgorithm(adjacency_matrix, 100, 0.85); //passing in adjacency matrix, 100 iterations, and damping factor of 0.85 
   std::vector<float> three_largest_ranks = getTopThreeAndLowest(out);
   REQUIRE(three_largest_ranks.at(0) == out.at(50));
