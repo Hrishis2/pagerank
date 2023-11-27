@@ -15,8 +15,8 @@ class Pagerank {
     private:
 };
 
-std::vector<std::vector<int>> csvToAdjacency(std::string const & fileName);
+std::vector<std::vector<int>> csvToEdgeList(std::string const & fileName);
 
-std::vector<float> pageRankAlgorithm(std::vector<std::vector<int>> adjacencyMatrix, int n, float d);
+std::vector<float> pageRankAlgorithm(std::vector<std::vector<int>> edgeList, int n, float d);
 
 std::vector<float> getTopThreeAndLowest(std::vector<float> results);
