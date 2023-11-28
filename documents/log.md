@@ -29,5 +29,55 @@ Hrishis2 and kpura3 were able to complete all of the functions necessary for the
 ### Issues encountered (Questions for mentors)
 The random surfer algorithm has a lot of randomness in terms of which link to follow, when to choose a new link at random (damping), etc. This has made it so that our medium sized data (50 sites) has some issues with what the least ranking site should be. Sometimes all tests pass, sometimes they don't because of what we define to be the "least ranking" site. Instead there are several possible least ranking sites, rather than one clear site. How can we fix this? We tried increasing the iterations to 1,000,000,000 iterations, but still it isn't always the same answer.
 
+The following code was used to verify that our page rank algorithm works:
+```
+
+# Online Python - IDE, Editor, Compiler, Interpreter
+import numpy as np
+import numpy.linalg as la
+import matplotlib.pyplot as plt
+def power_iteration(M, x):
+    # Perform power iteration and return steady state vector xstar
+    xc = x.copy()
+    for i in range(100) :
+        #print(xc)
+        xc = M @ xc
+    return xc
+A = np.array([[0,0,0,1,0,1,1,0,0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,1,0],
+[1,0,0,0,0,1,1,0,0,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0],
+[1,0,0,1,1,1,0,0,0,0,1,0,0,1,1,1,1,0,0,0,1,0,1,1,1],
+[0,1,1,0,1,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,0,1,1,0,0],
+[1,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,1,1,0,0,0,0,1,0],
+[0,1,1,1,1,0,1,0,0,0,1,1,0,0,0,1,0,1,1,0,0,0,0,1,0],
+[1,1,1,0,1,0,0,0,0,1,1,1,1,0,0,1,0,0,1,0,0,0,0,0,0],
+[1,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0],
+[0,0,1,0,1,1,1,0,0,0,1,1,1,0,1,1,1,0,1,1,0,1,0,1,1],
+[1,1,1,1,1,0,0,0,1,0,0,0,1,1,0,0,0,1,1,0,1,0,1,1,0],
+[1,1,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,0,0,1,1,0,0,1],
+[0,1,0,0,1,1,0,1,0,1,1,0,0,1,0,1,0,1,0,1,1,1,0,1,1],
+[0,1,1,1,1,1,1,0,0,0,0,1,0,0,1,1,0,0,1,0,1,0,0,0,1],
+[1,1,0,0,1,0,0,0,1,0,0,0,0,0,1,0,1,1,0,1,0,1,0,0,1],
+[0,0,0,0,1,1,1,1,0,0,1,0,1,0,0,1,1,1,0,0,1,1,1,0,0],
+[1,0,0,0,1,1,0,0,0,0,0,1,0,0,1,0,1,1,1,0,0,0,0,1,0],
+[0,1,1,1,1,0,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,1],
+[0,1,0,1,1,1,1,1,1,1,1,0,0,0,1,0,0,0,1,1,0,1,1,0,1],
+[0,0,0,1,0,0,1,0,1,1,1,0,0,1,0,1,0,0,0,1,1,1,0,1,0],
+[1,0,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,1,0,0,1,1,1,0],
+[0,1,1,1,0,1,1,0,1,0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,1],
+[0,0,1,1,0,1,0,0,0,1,1,1,0,1,1,1,0,0,0,1,1,0,1,0,0],
+[1,0,1,1,1,1,1,0,1,0,1,0,0,0,0,0,1,0,1,1,1,0,0,0,1],
+[0,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,1,0,1],
+[0,1,1,0,1,1,0,1,0,1,1,1,0,0,1,1,0,0,1,0,0,1,1,0,0]]).T
+M2 = A.copy().astype(float)
+# Convert entries in M2 below
+for i in range(len(M2)) :
+    x = np.sum(M2[:,i])
+    if (x != 0) :
+        M2[:,i] = A[:,i] / x 
+    #print(M2[:,i])
+print(power_iteration(M2, np.array([100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])))
+
+```
+
 ### Plans for next week
 Fix definitions on least ranking site, and top three sites
