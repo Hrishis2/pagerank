@@ -74,10 +74,11 @@ std::vector<float> pageRankAlgorithm(std::vector<std::vector<int>> edgeList, int
     for (int i = 0; i < n; i++) {
         if (rand() % 100 + 1 <= d * 100) { //follows link
             next = rand() % edgeList.at(curr_site).size();
+            curr_site = edgeList.at(curr_site).at(next);
         } else { //respawns
             next = rand() % edgeList.size();
+            curr_site = next;
         }
-        curr_site = next;
         visits.at(curr_site)++;
     }
     //normalize visits vector 
@@ -90,5 +91,21 @@ std::vector<float> pageRankAlgorithm(std::vector<std::vector<int>> edgeList, int
 }
 
 std::vector<float> getTopThreeAndLowest(std::vector<float> results) {
-    return std::vector<float>();
+    std::vector<float> ret(4, 0.0);
+    float min = INT16_MAX;
+    for (float result : results) {
+        if (result < min) min = result;
+        if (result > ret[0]) {
+            ret[2] = ret[1];
+            ret[1] = ret[0];
+            ret[0] = result;
+        } else if (result > ret[1]) {
+            ret[2] = ret[1];
+            ret[1] = result;
+        } else if (result > ret[2]) {
+            ret[2] = result;
+        }
+    }
+    ret[3] = min;
+    return ret;
 }
