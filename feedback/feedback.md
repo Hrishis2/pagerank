@@ -24,6 +24,20 @@ Lastly, keep documenting your progress and it will be helpful when you go to wri
 
 ## Mid Project Meeting
 
+We met for our Mid Project Meeting on 11/28 at 12pm. The team was able to present their algorithm with an explanation of how their tests would prove the algorithm's accuracy. 
+
+We discussed the issue mentioned with the randomness of the random surfer model causing some tests to fail. One solution to this would be having a global epsilon to account for this error, and to mention that there is inherently a difference between the two models for calculating PageRank in your report. 
+
+Overall, great job! 
+
 ## Week 3: 11/27 - 12/03
+
+### Serena's Feedback
+Great job making progress this week.
+
+We discussed the issues encountered in our Mid Project Meeting and it has been summarized above. You both are on track to finish the project. Nice job outlining and finishing goals for this week. 
+
+Let us know if you have any questions as you continue working on the remaining code and report. 
+
 
 ## Week 4: 12/04 - 12/06
