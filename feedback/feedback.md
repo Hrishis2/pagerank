@@ -39,5 +39,15 @@ We discussed the issues encountered in our Mid Project Meeting and it has been s
 
 Let us know if you have any questions as you continue working on the remaining code and report. 
 
+### Blaine's Feedback
+Hi team! You guys are making great progress. One of the only TODOs left is to *explore how this randomness affects your algorithm* - through test cases and graphs with the epsilon parameter as we discussed prior if you so choose.
+
+In your report, explore this strangeness. What is is causing this? How did a engineer at Google solve this problem in PageRank? (Honestly, I am curious! Clearly it would be in their best interest to serve the same ordered/ranked pages to everyone to be consistent). What would you do if you were Sergey Brin / Larry Page in the early days of Google and you came across this issue.
+
+A plot of epsilon (e.g. how much error you are okay with) changes with input size N. You can also explore Big O() and Big Ω(). A lot of the time we worry about the worst case situation and prioritize reducing it. However, perhaps users hardly ever come across the worst case situation and instead the "average" case situation is close to the best case situation. If we make an expensive tradeoff to minimize O() versus Ω(), that may not be the best thing to do.
+
+Either way, I have thrown out some ideas for you to explore. Feel free to email me if you want to discuss further or hop on a quick Zoom call!
+
+
 
 ## Week 4: 12/04 - 12/06
