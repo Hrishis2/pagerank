@@ -75,7 +75,7 @@ for i in range(len(M2)) :
     if (x != 0) :
         M2[:,i] = A[:,i] / x 
     #print(M2[:,i])
-print(power_iteration(M2, np.array([100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])))
+print(power_iteration(M2, np.ones((1, len(A)))))
 
 ```
 
