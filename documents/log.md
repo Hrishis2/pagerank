@@ -88,7 +88,9 @@ Fix definitions on least ranking site, and top three sites
 ## December 4th 2023
 
 ### Goals 
-1. 
+1. Create test cases for second largest and largest dataset
+2. Find out how randomness affects algorithm by using an epsilon parameter to see changes with input sizes of N
+3. Complete final presentation and report
    
 ### Tasks Complete
 The following updated code was used to verify that our page rank algorithm works especially with our Second Largest and Largest dataset:
@@ -128,7 +130,8 @@ print(power_iteration(M2, init))
 ```
 
 ### Issues encountered (Questions for mentors)
+None 
 
 ### Plans for next week
-
+None
 
