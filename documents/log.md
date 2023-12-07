@@ -83,3 +83,52 @@ print(power_iteration(M2, init))
 
 ### Plans for next week
 Fix definitions on least ranking site, and top three sites
+
+
+## December 4th 2023
+
+### Goals 
+1. 
+   
+### Tasks Complete
+The following updated code was used to verify that our page rank algorithm works especially with our Second Largest and Largest dataset:
+```
+# Online Python - IDE, Editor, Compiler, Interpreter
+import numpy as np
+import numpy.linalg as la
+import csv
+
+with open('data.csv', 'r') as f:
+    reader = csv.reader(f)
+    data = list(reader)
+data_array = np.array(data, dtype=float)
+print(data_array.shape)
+
+
+def power_iteration(M, x):
+    # Perform power iteration and return steady state vector xstar
+    xc = x.copy()
+    for i in range(100000) :
+        #print(xc)
+        xc = M @ xc
+    return xc
+A = data_array.T
+print(A.shape)
+M2 = A.copy().astype(float)
+print(M2.shape)
+# Convert entries in M2 below
+for i in range(len(M2)) :
+    x = np.sum(M2[:,i])
+    if (x != 0) :
+        M2[:,i] = A[:,i] / x
+    #print(M2[:,i])
+init = np.zeros(len(A))
+init[0] = 100
+print(power_iteration(M2, init))
+```
+
+### Issues encountered (Questions for mentors)
+
+### Plans for next week
+
+
