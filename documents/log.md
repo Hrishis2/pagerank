@@ -129,9 +129,11 @@ init[0] = 100
 print(power_iteration(M2, init))
 ```
 
-### Issues encountered (Questions for mentors)
-None 
-
+### Issues encountered 
+We initially struggled with finding the epsilon values to find its correlation with iterations. However, we were able to create a formula to show the relation between the theoretical output value and its difference from the real output value. Using this: 
+```
+ T-ε <= R <= T+ε
+```
 ### Plans for next week
 None
 
