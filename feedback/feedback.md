@@ -51,3 +51,7 @@ Either way, I have thrown out some ideas for you to explore. Feel free to email 
 
 
 ## Week 4: 12/04 - 12/06
+
+### Serena's Feedback
+
+Great job on finishing the project! It looks like you were able to fix the epsilon issues you encountered. Grades will be in soon. Feel free to email us if you have any questions or concerns.
